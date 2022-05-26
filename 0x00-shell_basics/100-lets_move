@@ -1,7 +1,2 @@
 #!/bin/bash
-export D=`ls | grep ^[A-Z]`
-for n in $D
-do 
-        cp $n /tmp/u
-done
-
+cp [A-Z]* /tmp/u
