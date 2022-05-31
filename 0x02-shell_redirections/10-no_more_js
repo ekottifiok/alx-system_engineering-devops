@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -regex .*.js -type f | xargs -d"\n" rm
+find . -regex .*.js -type f -delete
