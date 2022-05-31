@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $PATH | xargs -d : -n 1 | wc -l | echo $(($(cat /dev/stdin) - 1))
