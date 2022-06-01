@@ -1,2 +1,2 @@
 #!/bin/bash
-cat An\ Acrostic | cut -c 1 | tr -d '\n' | echo `(cat /dev/stdin)`
+cut -c 1 | tr -d '\n' | echo `(cat /dev/stdin)`
