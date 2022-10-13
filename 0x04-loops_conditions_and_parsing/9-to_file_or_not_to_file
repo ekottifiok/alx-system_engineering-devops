@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# script that gives you information about the school file.
+
+var=$(file school)
+FILE_NOT_FOUND="school: cannot open \`school' (No such file or directory)"
+FILE_EMPTY="school: empty"
+FILE_NOT_EMPTY="school: ASCII text"
+FILE_DIRECTORY="school: directory"
+
+if [ "$var" == "$FILE_NOT_FOUND" ]
+then
+    printf "school file does not exist"
+elif [ "$var" == "$FILE_EMPTY" ]
+then
+    printf "school file exists\nschool file is empty\nschool is a regular file\n"
+elif [ "$var" == "$FILE_NOT_EMPTY" ]
+then
+    printf "school file exists\nschool file is not empty\nschool is a regular file\n"
+elif [ "$var" == "$FILE_DIRECTORY" ]
+then
+    printf "school file exists\nschool file is not empty\n"
+fi

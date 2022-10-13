@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times using while
+# when x=4 prints bad luck and when x=8 prints good luck
+
+x=0; 
+while [ $x -lt 10 ]
+do 
+    ((x++))
+    if [ "$x" = 4 ] 
+    then 
+        echo "bad luck"
+    elif [ "$x" = 8 ]
+    then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi; 
+    
+done
