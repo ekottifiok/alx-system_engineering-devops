@@ -12,7 +12,8 @@ do
     if [[ $((i % 3)) -eq  0 ] && [ $((i % 5)) -eq 0 ]]
     then
         echo "FizzBuzz"
-    elif 
-    [$((i % 5 )) -eq 0 ]
-    fi
+    elif [ $((i % 5 )) -eq 0 ]
+    then
+        echo "Buzz"
+    elif [ $((i )) ]
 done
