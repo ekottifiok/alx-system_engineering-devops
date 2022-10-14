@@ -7,6 +7,6 @@
 IFS="-"
 for file in *
 do 
-    read -a strarr <<< "$file"
+    read -ra strarr <<< "$file"
     echo "${strarr[1]}"
 done
