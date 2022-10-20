@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "0x06-regular_expressions"
+		},
+		{
+			"path": "0x07-networking_basics"
 		}
 	],
 	"settings": {}
