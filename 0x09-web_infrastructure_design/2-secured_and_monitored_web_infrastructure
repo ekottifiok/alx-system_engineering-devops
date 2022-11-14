@@ -1,0 +1,32 @@
+We added firewalls to  secure/protects the entire network from the external sources. We also added 3 monitoring clients in order to watch computer metrics, record them, and emit an alert if something is unusual or that could make the computer not work properly happens.
+
+Firewalls are for both networking and security technology. They are often considered the bare minimum and standard for network security. However, they are not the only measure an enterprise takes to secure their network. This firewall analysis describes both the benefits of firewalls and their weaknesses.
+
+To serve secure traffic from Fastly using HTTPS, a website or application needs to provide clients with a valid TLS certificate signed by a trusted Certification Authority (CA).
+
+ monitoring will watch computer metrics, record them, and emit an alert if something is unusual or that could make the computer not work properly happens.
+
+ MONITORING TOOLS COLLECT DATA THIS WAY:
+ - NewRelic requires you to add a piece of JavaScript to your website, this agent will collect information and send it back to the New Relic servers.
+ - DataDog allows you to measure and monitor everything with graphs. It gathers performance data from all your application components.
+ - Uptime Robot is a simple service that will check that your website is responding from multiple locations in the world. 
+ - Nagios is an open source project started in 1999, it is among the most widely used monitoring tools in the tech industry. It is, however, seen as outdated.
+ - Wavefront is a cutting edge monitoring service funded by great software engineers who’ve built monitoring tools for the best tech companies in Silicon Valley.
+
+ Web stack monitoring can be broken down into 2 categories:
+
+    Application monitoring: getting data about your running software and making sure it is behaving as expected
+    Server monitoring: getting data about your virtual or physical server and making sure they are not overloaded (could be CPU, memory, disk or network overload)
+
+SSL termination at the Load Balancer also poses a security risk
+because the data that are passing across the network from the load balancer to the App Server are now
+unencrypted, and that will leave applications vulnerable to Man-in-the-Middle Attack (MITM) (Boisrond, 2014).
+
+Known Issues in MySQL:
+- Even if you use lower_case_table_names=2 (which enables MySQL to remember the case used for databases and table names), MySQL does not remember the case used for database names for the function DATABASE() or within the various logs (on case-insensitive systems). 
+- Dropping a FOREIGN KEY constraint does not work in replication because the constraint may have another name on the replica. 
+
+
+
+
+Image URL: https://drive.google.com/file/d/1_LXh-N04qp60I3qOXXkeRObIzBqhqJ-J/view?usp=sharing

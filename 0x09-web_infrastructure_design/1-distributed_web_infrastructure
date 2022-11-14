@@ -1,0 +1,13 @@
+Load balance: Because I want to split the traffic between the two servers.Load balancing essentially provides the right roads to the destination.
+
+Load algorithm balance used here is Dynamic load balancing is adaptive and capable of changing how it sorts incoming requests based on the current demand servers face.
+
+- Setup: Two Adaptive Servers are configured as companion servers, each with independent workloads. These companions run on the primary and secondary nodes, respectively, as individual servers until one fails over.
+- Setup: A single Adaptive Server runs either on the primary node or on the secondary node. The Adaptive Server runs on the primary node before a fail over and the secondary node after fail over.
+
+Master-slave replication enables data from one database server (the master) to be replicated to one or more other database servers (the slaves). The master logs the updates, which then ripple through to the slaves. The slave outputs a message stating that it has received the update successfully, thus allowing the sending of subsequent updates. Master-slave replication can be either synchronous or asynchronous. The difference is simply the timing of propagation of changes. If the changes are made to the master and slave at the same time, it is synchronous. If changes are queued up and written later, it is asynchronous.
+
+Difference between master and replica:  The difference is that the primary is a read and write database while th replica is mostly the read only Database.
+
+
+Image URL: https://drive.google.com/file/d/1JP68hESZC0mmWbmeGaIYsWXVXlNSWhjW/view?usp=sharing

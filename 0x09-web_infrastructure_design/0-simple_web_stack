@@ -1,0 +1,19 @@
+ehat is  a Server: is a computer program or device that provides a service to another computer program and its user, also known as the client. Is a physical computer or an actual machine. 
+
+What is the role of domain name?: Is to server to indetify internet resources such as computers, network and services with a text-based label that is easier to memorize thatn the numerical addresses used in the internet protocols.
+
+What type of DNS record www is in www.foobar.com?: An A record is used in www.foobar.com(A record uses a domain name to find the IP address of a computer connected to the internet.
+
+What is the role of the web server?: Is to display website content through storing, processing and delivering webpages to users.
+
+What is the role of the application server?:  is to act as host (or container) for the user’s business logic while facilitating access to and performance of the business application.
+
+What is the role of the database?:  Serving as the intermediary between the user and the database, a DBMS provides users access to files stored in a database. It provides the end user with a single, integrated view of the data, and translates all applications it receives into complex operations that fulfil those requests. 
+
+What is the server using to communicate with the computer of the user requesting the website?:
+- Web browsers communicate with web servers using the HyperText Transfer Protocol (HTTP). When you click a link on a web page, submit a form, or run a search, the browser sends an HTTP Request to the server.
+
+You must be able to explain what the issues are with this infrastructure: 
+- SPOF:  is a part of a system that, if it fails, will stop the entire system from working.[1] SPOFs are undesirable in any system with a goal of high availability or reliability, be it a business practice, software application, or other industrial system. 
+
+Image URL: https://drive.google.com/file/d/1_PLM3w81Ph8CipmXnleg-2aaG9KHWEe6/view?usp=sharing
