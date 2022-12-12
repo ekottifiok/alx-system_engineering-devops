@@ -1,0 +1,4 @@
+Host magic_server
+	User ubuntu
+	IdentityFile ~/.ssh/school
+	IdentitiesOnly yes
