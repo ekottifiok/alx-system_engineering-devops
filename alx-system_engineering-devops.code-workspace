@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "0x0C-web_server"
+		},
+		{
+			"path": "0x0A-configuration_management"
 		}
 	],
 	"settings": {}
