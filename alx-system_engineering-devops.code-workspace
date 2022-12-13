@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "0x0B-ssh"
+		},
+		{
+			"path": "0x0C-web_server"
 		}
 	],
 	"settings": {}

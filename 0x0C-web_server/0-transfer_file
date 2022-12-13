@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+echo $#
+if [ $# == 5 ] ; then
+ssh "$3"@"$2" -i "$4" "$(cp "$1" ~)"
+else echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+fi
