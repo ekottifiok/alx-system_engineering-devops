@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 # Install nginx on your web-01
 sudo apt-get update && sudo apt-get install -y nginx
-echo 'Hello World!' > index.html
-sudo cp index.html /var/www/html/index.html
+echo 'Hello World!' > ~/index.html
+sudo cp ~/index.html /usr/share/nginx/html/index.html
+sudo mv ~/index.html /var/www/html/index.html
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /etc/nginx/html;
+     index       index.html index.htm;
+}
+" | sudo tee /etc/nginx/sites-available/default
 sudo service nginx reload
