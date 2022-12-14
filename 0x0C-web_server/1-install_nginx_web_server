@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Install nginx on your web-01
-apt-get update; apt-get install -y nginx
-echo "<html><head>Hello World</head><body><h1>Hello World</h1></body></html>" > /usr/share/nginx/html/index.html
+apt-get update && apt-get install -y nginx
+echo '<html><head></head><body>Hello World!</body></html>' > /usr/share/nginx/html/index.html
 service nginx reload
