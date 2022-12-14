@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx on your web-01
 sudo apt-get update && sudo apt-get install -y nginx
-echo '<html><head></head><body>Hello World!</body></html>' > /usr/share/nginx/html/index.html
-service nginx reload
+echo '<html><head></head><body>Hello World!</body></html>' > index.html
+sudo cp index.html /usr/share/nginx/html/index.html 
+sudo cp index.html /var/www/html/index.html
+sudo service nginx reload
