@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
-# Install nginx on your web-01
-sudo apt-get update && sudo apt-get install -y nginx
-echo 'Hello World!' > ~/index.html
-sudo cp ~/index.html /usr/share/nginx/html/index.html
-sudo mv ~/index.html /var/www/html/index.html
+# Install nginx on your web-01 server
+# change index page to string "Holberton School"
+
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
+echo "Hello World!" | sudo tee /etc/nginx/html/index.html
 printf %s "server {
      listen      80 default_server;
      listen      [::]:80 default_server;
@@ -11,4 +15,4 @@ printf %s "server {
      index       index.html index.htm;
 }
 " | sudo tee /etc/nginx/sites-available/default
-sudo service nginx reload
+sudo service nginx restart
