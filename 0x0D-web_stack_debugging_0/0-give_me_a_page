@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# fix a failed apache service
+sed 's/#ServerName www.example.com/ServerName www.example.com/g' /etc/apache2/sites-available/000-default.conf
+service apache2 reload
+
