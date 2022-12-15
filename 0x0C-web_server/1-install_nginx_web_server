@@ -13,5 +13,8 @@ printf %s "server {
      root        /etc/nginx/html;
      index       index.html index.htm;
 }
+location / {
+    return 200;
+}
 " | sudo tee /etc/nginx/sites-available/default
 sudo service nginx restart
