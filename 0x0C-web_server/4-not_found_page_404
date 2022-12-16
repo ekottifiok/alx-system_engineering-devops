@@ -3,29 +3,15 @@
 # The redirection must be a “301 Moved Permanently”
 # have a custom 404 page that contains the string Ceci n'est pas une page.
 
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt-get -y install nginx
-sudo service nginx start
-echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
-echo "Hello World!" | sudo tee /etc/nginx/html/index.html
-echo -e "Ceci n'est pas une page\n" | sudo tee /usr/share/nginx/html/404.html
-echo -e "Ceci n'est pas une page\n" | sudo tee /etc/nginx/html/404.html
+sudo apt-get update && sudo apt-get -y install nginx
 printf %s "server {
-     listen      80;
-     listen      [::]:80 default_server;
-     root        /etc/nginx/html;
-     index       index.html index.htm;
-
-     location /redirect_me {
-     	      return 301 http://www.staggeringbeauty.com/;
-	      }
-
-    error_page 404 /404.html;
-    location /404 {
-      root /etc/nginx/html;
-      internal;
-    }
+     listen 80 default_server;
+     listen [::]:80 default_server;
+     root /var/www/html;
+     index index.html index.htm index.nginx-debian.html;
+     location / {
+          return 404 \"Ceci n'est pas une page\n\";
+	}
 }
 " | sudo tee /etc/nginx/sites-available/default
-sudo service nginx restart
+sudo service nginx reload
