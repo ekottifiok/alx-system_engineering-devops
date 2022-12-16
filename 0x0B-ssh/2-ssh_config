@@ -1,4 +1,5 @@
 Host magic_server
 	User ubuntu
+	HostName 98.98.98.98
 	IdentityFile ~/.ssh/school
 	IdentitiesOnly yes
