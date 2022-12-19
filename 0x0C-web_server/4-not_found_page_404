@@ -9,7 +9,7 @@ printf %s "server {
      listen [::]:80 default_server;
      root /var/www/html;
      index index.html index.htm index.nginx-debian.html;
-     location / {
+     location /xyz {
           return 404 \"Ceci n'est pas une page\n\";
 	}
 }" | sudo tee /etc/nginx/sites-available/default
