@@ -4,7 +4,7 @@
 # have a custom 404 page that contains the string Ceci n'est pas une page.
 
 sudo apt-get update && sudo apt-get -y install nginx
-printf "%s\n" "Ceci n'est pas une page" | sudo tee /var/www/html/404.html 
+printf "%s\n\n" "Ceci n'est pas une page" | sudo tee /var/www/html/404.html 
 printf "server {
      listen 80 default_server;
      listen [::]:80 default_server;
@@ -16,4 +16,3 @@ printf "server {
      }
 }" | sudo tee /etc/nginx/sites-available/default
 sudo service nginx stop && sudo service nginx start
-sudo service nginx reload
