@@ -23,6 +23,9 @@
 		},
 		{
 			"path": "0x0E-web_stack_debugging_1"
+		},
+		{
+			"path": "0x0F-load_balancer"
 		}
 	],
 	"settings": {}
