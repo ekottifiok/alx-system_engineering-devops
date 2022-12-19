@@ -19,4 +19,4 @@ printf %s "server {
         }
 }
 " | sudo tee /etc/nginx/sites-available/default
-sudo service nginx reload
+sudo service nginx stop && sudo service nginx start
