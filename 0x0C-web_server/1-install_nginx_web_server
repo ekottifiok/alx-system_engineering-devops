@@ -5,7 +5,7 @@
 # curl http://54.160.94.77/   --> returns header info
 
 sudo apt-get update && sudo apt-get -y install nginx
-echo "Hello World!" | sudo tee /var/www/html/index*
+echo "Hello World!" | sudo tee /var/www/html/index*.html
 printf %s "server {
         listen 80 default_server;
         listen [::]:80 default_server;
