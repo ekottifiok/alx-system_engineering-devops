@@ -8,7 +8,7 @@ ADD404_NOTFOUND="\n\\terror_page 404 /404.html;\n\tlocation = /var/www/html/404.
 PATTERN="#error_page 404 /404.html;"
 
 sudo apt-get update && sudo apt-get -y install nginx
-printf "%s\n" "Ceci n'est pas une page\n" | sudo tee /var/www/html/404.html 
+printf "%s\n" "Ceci n'est pas une page" | sudo tee /var/www/html/404.html 
 printf "server {
      listen 80 default_server;
      listen [::]:80 default_server;
