@@ -13,5 +13,5 @@ printf "server {
 \tlocation / {
 \t\treturn 200 \"%s\"
 \t}
-}\n" "Hello World\n" | sudo tee /etc/nginx/sites-available/default
+}\n" "Hello World!\n" | sudo tee /etc/nginx/sites-available/default
 sudo service nginx stop && sudo service nginx start
