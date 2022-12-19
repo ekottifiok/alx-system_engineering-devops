@@ -12,6 +12,5 @@ printf %s "server {
      location / {
           return 404 \"Ceci n'est pas une page\n\";
 	}
-}
-" | sudo tee /etc/nginx/sites-available/default
+}" | sudo tee /etc/nginx/sites-available/default
 sudo service nginx reload

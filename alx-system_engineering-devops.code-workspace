@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "attack_is_the_best_defense"
+		},
+		{
+			"path": "0x0E-web_stack_debugging_1"
 		}
 	],
 	"settings": {}
