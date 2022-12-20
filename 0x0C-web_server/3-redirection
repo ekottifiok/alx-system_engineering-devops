@@ -8,6 +8,7 @@ sudo chown -R "$USER":"$USER" /etc/nginx/sites-available/
 printf "server {
      listen 80 default_server;
      listen [::]:80 default_server;
+     server_name _;
      location /redirect_me {
           return 301 http://www.staggeringbeauty.com/;
      }
