@@ -2,13 +2,18 @@
 # Configure Nginx so that its HTTP response contains a custom header (on web-01 and web-02)
 
 sudo apt-get update && sudo apt-get -y install nginx && histchars=
+printf "%s\n\n" "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 printf "server {
     listen 80 default_server;
     listen [::]:80 default_server;
     location / {
         return 200 \"%s\";
     }
-    add_header X-Served-By $hostname
+    add_header X-Served-By $hostname;
+    error_page 404 /404.html;
+    location = /404.html {
+        root /var/www/html;
+        internal;
+     }
 }\n" "Hello World!\n" | sudo tee /etc/nginx/sites-available/default
-
 unset histchars && sudo service nginx stop && sudo service nginx start
