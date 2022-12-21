@@ -3,10 +3,10 @@
 
 sudo apt-get update -y
 sudo apt-get install nginx -y
-printf "%s" "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
-printf "%s" "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+printf "%s\n" "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+printf "%s\n" "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
 new_string="server_name _;\n\trewrite ^\/redirect_me youtube.com permanent;"
-other_string="\n\tadd_header X-Served-By \$hostname;"
+other_string="\n\tadd_header X-Served-By $(hostname);"
 second_string="\n\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
 sudo sed -i "s/server_name _;/$new_string$other_string$second_string/" /etc/nginx/sites-enabled/default
-sudo service nginx start
+sudo service nginx restart && sudo ufw allow 'Nginx HTTP'
