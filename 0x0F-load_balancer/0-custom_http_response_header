@@ -1,19 +1,12 @@
 #!/usr/bin/env bash
-# Configure Nginx so that its HTTP response contains a custom header (on web-01 and web-02)
+# Show a message in 404 error
 
-sudo apt-get update && sudo apt-get -y install nginx && histchars=
-printf "%s\n\n" "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-printf "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    location / {
-        return 200 \"%s\";
-    }
-    add_header X-Served-By $hostname;
-    error_page 404 /404.html;
-    location = /404.html {
-        root /var/www/html;
-        internal;
-     }
-}\n" "Hello World!\n" | sudo tee /etc/nginx/sites-available/default
-unset histchars && sudo service nginx stop && sudo service nginx start
+sudo apt-get update -y
+sudo apt-get install nginx -y
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+new_string="server_name _;\n\trewrite ^\/redirect_me youtube.com permanent;"
+other_string="\n\tadd_header X-Served-By \$hostname;"
+second_string="\n\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
+sed -i "s/server_name _;/$new_string$other_string$second_string/" /etc/nginx/sites-enabled/default
+service nginx start
