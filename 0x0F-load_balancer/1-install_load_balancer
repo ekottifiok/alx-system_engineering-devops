@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install and configure a load balancer
 
-sudo apt-get update -y
+sudo apt-get update
 sudo apt-get install haproxy -y
 
 printf "
@@ -16,4 +16,4 @@ backend nodes
     server 57022-web-02 52.91.116.127:80 check
 " | sudo tee -a /etc/haproxy/haproxy.cfg
 
-sudo service haproxy restart
+sudo service haproxy stop && sudo service haproxy start
