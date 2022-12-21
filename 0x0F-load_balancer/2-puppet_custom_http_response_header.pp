@@ -22,7 +22,7 @@ exec {'HTTP header':
 	provider => 'shell'
 }
 
-service { 'nginx':
-  ensure  => running,
-  require => Package['nginx'],
+exec {'stop and start nginx':
+  command => '/usr/sbin/service nginx restart',
+  require => Exec['HTTP header']
 }
