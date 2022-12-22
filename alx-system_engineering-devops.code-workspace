@@ -26,6 +26,9 @@
 		},
 		{
 			"path": "0x0F-load_balancer"
+		},
+		{
+			"path": "0x10-https_ssl"
 		}
 	],
 	"settings": {}
