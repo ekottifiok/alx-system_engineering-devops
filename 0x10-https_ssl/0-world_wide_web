@@ -15,6 +15,6 @@ do
     dig "$sub.$1" > "$tmpfile"
     ip_address=$(grep -A1 'ANSWER SECTION:' "$tmpfile" | awk -F' ' '{ print $5 }' | awk "NR==2")
     record=$(grep -A1 'ANSWER SECTION:' "$tmpfile" | awk -F' ' '{ print $4 }' | awk "NR==2")
-    printf "The subdomain %s is a %s record and points to %s \n" "$sub" "$record" "$ip_address"
+    printf "The subdomain %s is a %s record and points to %s\n" "$sub" "$record" "$ip_address"
     rm "$tmpfile"
 done
