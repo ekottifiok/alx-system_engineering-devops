@@ -2,3 +2,9 @@
 attack_is_the_best_defense/user_authenticating_into_server
 attack_is_the_best_defense/hydra.restore
 attack_is_the_best_defense/dictionary
+0x13-firewall/default
+0x13-firewall/before.rules
+0x13-firewall/sed_out
+0x13-firewall/File1
+0x12-web_stack_debugging_2/nginx.conf
+0x12-web_stack_debugging_2/default
