@@ -5,5 +5,5 @@ CREATE TABLE IF NOT EXISTS nexus6 (
     id INT,
     name VARCHAR(256)
 );
-INSERT INTO `nexus6` (`id`, `name`) VALUES (89, "Best School");
-GRANT SELECT ON nexus6 TO holberton_user;
+INSERT INTO `nexus6` (`id`, `name`) VALUES (893, "Best School In the World");
+GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
