@@ -11,6 +11,12 @@
         },
         {
             "path": "0x13-firewall"
+        },
+        {
+            "path": "0x14-mysql"
+        },
+        {
+            "path": "0x0F-load_balancer"
         }
     ]
 }

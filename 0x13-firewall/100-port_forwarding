@@ -2,6 +2,7 @@
 # forwards a port 8080 to 80
 sudo -s
 ufw allow 8080/TCP
-sudo sh -c '{ head -n 10 before.rules; echo "*nat\n:PREROUTING ACCEPT [0:0]\n# forward localhost port 8080 to localhost port 80\n-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80\nCOMMIT"; tail -n +11 before.rules; } > before.rules'
+cd /etc/ufw
+{head -n 10 before.rules; echo "*nat\n:PREROUTING ACCEPT [0:0]\n# forward localhost port 8080 to localhost port 80\n-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80\nCOMMIT"; tail -n +11 before.rules; } > before.rules
 ufw disable && ufw enable
 exit
