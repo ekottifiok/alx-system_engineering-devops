@@ -23,6 +23,9 @@
         {
             "name": "0x14-mysql",
             "path": "0x14-mysql"
+        },
+        {
+            "path": "0x15-api"
         }
     ]
 }
