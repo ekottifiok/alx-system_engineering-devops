@@ -17,9 +17,9 @@ def recurse(subreddit, hot_list=[], count=0, after=None):
         "User-Agent": "My-User-Agent"
     }
     payload = ""
-    conn.request("GET", "/r/{}/hot.json?count={}&after={}".format(subreddit, count, after),
-                payload, headersList)
-        
+    conn.request("GET", "/r/{}/hot.json?count={}&after={}".
+                 format(subreddit, count, after), payload, headersList)
+
     data = conn.getresponse()
     if data.status >= 400:
         return None
