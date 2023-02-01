@@ -17,18 +17,19 @@ def recurse(subreddit, hot_list=[], count=0, after=None):
         "User-Agent": "My-User-Agent"
     }
     payload = ""
-    conn.request("GET", "/r/{}/hot.json".format(subreddit),
+    conn.request("GET", "/r/{}/hot.json?count={}&after={}".format(subreddit, count, after),
                 payload, headersList)
         
     data = conn.getresponse()
     if data.status >= 400:
         return None
-    child = loads(data.read()).get('data').read().get('children')
+    data = loads(data.read()).get('data')
+    child = data.get('children')
     hot_l = hot_list + [item.get("data").get("title")
                         for item in child]
 
-    if not child.get("after"):
+    if not data.get("after"):
         return hot_l
 
-    return recurse(subreddit, hot_l, child.get("count"),
-                   child.get("after"))
+    return recurse(subreddit, hot_l, data.get("dist"),
+                   data.get("after"))
