@@ -26,6 +26,9 @@
         },
         {
             "path": "0x15-api"
+        },
+        {
+            "path": "0x16-api_advanced"
         }
     ]
 }

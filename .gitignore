@@ -11,3 +11,6 @@ attack_is_the_best_defense/dictionary
 0x15-api/2.csv
 0x15-api/2.json
 0x15-api/todo_all_employees.json
+0x16-api_advanced/0x16_venv/
+0x16-api_advanced/__pycache__/
+*/*-main*
