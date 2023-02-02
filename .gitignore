@@ -14,3 +14,5 @@ attack_is_the_best_defense/dictionary
 0x16-api_advanced/0x16_venv/
 0x16-api_advanced/__pycache__/
 */*-main*
+0x18-webstack_monitoring/webstack_venv/*
+0x16-api_advanced/2-recurse.py

@@ -2,13 +2,13 @@
 """Write a function that queries the Reddit API and returns
 the number of subscribers (not active users, total subscribers)
 for a given subreddit"""
-import http.client
-from json import loads
 
 
 def recurse(subreddit, hot_list=[], count=0, after=None):
     """Queries the Reddit API and returns the number of subscribers
     to the subreddit"""
+    import http.client
+    from json import loads
 
     conn = http.client.HTTPSConnection("www.reddit.com")
 

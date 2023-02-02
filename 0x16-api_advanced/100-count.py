@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """Module for task 3"""
-import http.client
-from json import loads
+
 
 def count_words(subreddit, word_list: list, word_count={}, after=None):
     """Queries the Reddit API and returns the count of words in
     word_list in the titles of all the hot posts
     of the subreddit"""
+    import http.client
+    from json import loads
 
     conn = http.client.HTTPSConnection("www.reddit.com")
 
@@ -17,7 +18,7 @@ def count_words(subreddit, word_list: list, word_count={}, after=None):
     payload = ""
     conn.request("GET", "/r/{}/hot.json?after={}".
                  format(subreddit, after), payload, headersList)
-    
+
     data = conn.getresponse()
     if data.status != 200:
         return None
@@ -37,7 +38,6 @@ def count_words(subreddit, word_list: list, word_count={}, after=None):
                 word_count[word] += 1
     if data.get('after'):
         return count_words(subreddit, word_list, word_count, data.get('after'))
-    
-    word_count = sorted(word_count.items(), key=lambda kv:kv[1], reverse=True)
-    [print('{}: {}'.format(k, v)) for k, v in word_count if v != 0]
 
+    word_count = sorted(word_count.items(), key=lambda kv: kv[1], reverse=True)
+    [print('{}: {}'.format(k, v)) for k, v in word_count if v != 0]
