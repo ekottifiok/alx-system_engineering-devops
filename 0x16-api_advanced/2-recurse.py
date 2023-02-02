@@ -1,35 +1,28 @@
 #!/usr/bin/python3
-"""Write a function that queries the Reddit API and returns
-the number of subscribers (not active users, total subscribers)
-for a given subreddit"""
+"""Module for task 2"""
 
 
 def recurse(subreddit, hot_list=[], count=0, after=None):
-    """Queries the Reddit API and returns the number of subscribers
-    to the subreddit"""
-    import http.client
-    from json import loads
+    """Queries the Reddit API and returns all hot posts
+    of the subreddit"""
+    import requests
 
-    conn = http.client.HTTPSConnection("www.reddit.com")
-
-    headersList = {
-        "Accept": "*/*",
-        "User-Agent": "My-User-Agent"
-    }
-    payload = ""
-    conn.request("GET", "/r/{}/hot.json?count={}&after={}".
-                 format(subreddit, count, after), payload, headersList)
-
-    data = conn.getresponse()
-    if data.status >= 400:
+    sub_info = requests.get("https://www.reddit.com/r/{}/hot.json"
+                            .format(subreddit),
+                            params={"count": count, "after": after},
+                            headers={"User-Agent": "My-User-Agent"},
+                            allow_redirects=False)
+    if sub_info.status_code >= 400:
         return None
-    data = loads(data.read()).get('data')
-    child = data.get('children')
-    hot_l = hot_list + [item.get("data").get("title")
-                        for item in child]
 
-    if not data.get("after"):
+    hot_l = hot_list + [child.get("data").get("title")
+                        for child in sub_info.json()
+                        .get("data")
+                        .get("children")]
+
+    info = sub_info.json()
+    if not info.get("data").get("after"):
         return hot_l
 
-    return recurse(subreddit, hot_l, data.get("dist"),
-                   data.get("after"))
+    return recurse(subreddit, hot_l, info.get("data").get("count"),
+                   info.get("data").get("after"))

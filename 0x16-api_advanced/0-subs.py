@@ -1,25 +1,17 @@
 #!/usr/bin/python3
-"""Write a function that queries the Reddit API and returns
-the number of subscribers (not active users, total subscribers)
-for a given subreddit"""
-import http.client
-from json import loads
+"""Module for task 0"""
 
 
 def number_of_subscribers(subreddit):
     """Queries the Reddit API and returns the number of subscribers
     to the subreddit"""
-    conn = http.client.HTTPSConnection("www.reddit.com")
+    import requests
 
-    headersList = {
-        "Accept": "*/*",
-        "User-Agent": "My-User-Agent"
-    }
-
-    payload = ""
-    conn.request("GET", "/r/{}/about.json".format(subreddit),
-                 payload, headersList)
-    data = conn.getresponse()
-    if data.status >= 300:
+    sub_info = requests.get("https://www.reddit.com/r/{}/about.json"
+                            .format(subreddit),
+                            headers={"User-Agent": "My-User-Agent"},
+                            allow_redirects=False)
+    if sub_info.status_code >= 300:
         return 0
-    return loads(data.read()).get("data").get("subscribers")
+
+    return sub_info.json().get("data").get("subscribers")
