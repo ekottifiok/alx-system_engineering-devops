@@ -6,7 +6,7 @@ import http.client
 from json import loads
 
 
-def top_ten(subreddit="Programming"):
+def top_ten(subreddit):
     """Queries the Reddit API and returns """
     conn = http.client.HTTPSConnection("www.reddit.com")
 
