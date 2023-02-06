@@ -35,6 +35,9 @@
         },
         {
             "path": "0x18-webstack_monitoring"
+        },
+        {
+            "path": "0x1A-application_server"
         }
     ]
 }
