@@ -38,6 +38,9 @@
         },
         {
             "path": "0x1A-application_server"
+        },
+        {
+            "path": "0x1B-web_stack_debugging_4"
         }
     ]
 }
